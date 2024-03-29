@@ -1,7 +1,11 @@
+import AppBar from '../../components/AppBar/AppBar';
+import RegisterForm from '../../components/RegisterForm/RegisterForm';
+
 const RegisterPage = () => {
   return (
     <div>
-      <h2>Register page</h2>
+      <AppBar />
+      <RegisterForm />
     </div>
   );
 };

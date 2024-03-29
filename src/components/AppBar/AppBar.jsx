@@ -4,11 +4,12 @@ import Navigation from '../Navigation/Navigation';
 import UserMenu from '../UserMenu/UserMenu';
 
 const AppBar = () => {
+  const isLogged = false;
+
   return (
     <header className={css.header}>
       <Navigation />
-      <UserMenu />
-      <AuthNav />
+      {isLogged ? <AuthNav /> : <UserMenu />}
     </header>
   );
 };

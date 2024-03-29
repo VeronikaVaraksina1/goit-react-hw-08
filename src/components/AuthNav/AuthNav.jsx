@@ -1,7 +1,10 @@
+import css from './AuthNav.module.css';
+
 const AuthNav = () => {
   return (
-    <div>
-      <p>Navigation for not auth users</p>
+    <div className={css.container}>
+      <p>Hello, users!</p>
+      <button className={css.button}>Log Out</button>
     </div>
   );
 };
