@@ -17,6 +17,3 @@ export const { changeFilter } = filtersSlice.actions;
 
 // експорт редюсера
 export default filtersSlice.reducer;
-
-// експорт селектора
-export const selectNameFilter = state => state.filters.name;
