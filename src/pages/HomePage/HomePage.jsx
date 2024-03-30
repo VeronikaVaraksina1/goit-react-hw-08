@@ -51,6 +51,7 @@ const HomePage = () => {
           simplicity, organization, and peace of mind.
         </h3>
       </div>
+      <img className={css.image} src="../../../src/img/img-home.jpg" alt="home image" />
     </div>
   );
 };

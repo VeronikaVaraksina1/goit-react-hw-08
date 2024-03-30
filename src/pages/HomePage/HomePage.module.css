@@ -33,7 +33,7 @@
 }
 
 .bgImage {
-  background-image: url(../../img/background.jpg);
+  background-image: url(../../img/background-home.jpg);
   background-color: #f4f5f5;
   background-repeat: no-repeat;
   background-size: cover;
@@ -62,16 +62,30 @@
   margin: 0 auto 24px auto;
 }
 
+.image {
+  position: absolute;
+  right: 172px;
+  bottom: 162px;
+
+  width: 468px;
+  padding: 8px;
+  border: 1px dashed #211b14;
+  border-radius: 10px;
+}
+
 .description {
   position: absolute;
   right: 40px;
   bottom: 40px;
 
   width: 600px;
+  padding: 10px;
   border: 1px solid #ad865a;
   border-radius: 10px;
   margin: 0 auto;
 
   background-color: #f4f5f5;
   text-align: center;
+  font-size: 18px;
+  font-weight: 500;
 }
