@@ -13,8 +13,7 @@ const LoginPage = () => {
           <span className={css.icon}>
             <FaHeart />
           </span>
-          Registering on our phone contacts storage platform is a step towards efficient contact
-          management and saving valuable time.
+          We&#39;re glad to see you again! Please sign in to access your account.
         </p>
       </div>
       <LoginForm />
