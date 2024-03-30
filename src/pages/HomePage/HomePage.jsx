@@ -8,13 +8,16 @@ const HomePage = () => {
       <AppBar />
       <div className={css.containerTitle}>
         <h1 className={css.title}>Welcome to Contact Kingdom!</h1>
-        <h2>
-          Simplify your life and stay organized with our user-friendly online tool designed to
-          streamline your contact management experience.
-        </h2>
       </div>
+
+      <h2 className={css.subtitle}>
+        Simplify your life and stay organized with our user-friendly online tool designed to
+        streamline your contact management experience.
+      </h2>
+
       <div className={css.containerDescription}>
-        <ul>
+        <h3>Advantages of Contact Kingdom:</h3>
+        <ul className={css.list}>
           <li>
             <h3>Centralized Contact Storage</h3>
             <p>
@@ -41,16 +44,9 @@ const HomePage = () => {
               computer, tablet, or smartphone.
             </p>
           </li>
-          <li>
-            <h3>Secure Data Encryption</h3>
-            <p>
-              Rest assured knowing that your contact information is securely encrypted to protect
-              your privacy and sensitive data.
-            </p>
-          </li>
         </ul>
 
-        <h3>
+        <h3 className={css.description}>
           Sign up now and start enjoying the benefits of efficient contact management. Say hello to
           simplicity, organization, and peace of mind.
         </h3>

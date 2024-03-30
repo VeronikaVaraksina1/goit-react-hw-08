@@ -26,6 +26,7 @@ const ContactsPage = () => {
 
   return (
     <>
+      <div className={css.bgImage}></div>
       <AppBar />
       <ContactForm />
       <SearchBox />

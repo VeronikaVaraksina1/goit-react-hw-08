@@ -1,3 +1,7 @@
+.wrapper {
+  padding-top: 30px;
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -7,7 +11,7 @@
   border: 1px solid #ad865a;
   border-radius: 8px;
   margin: 0 auto;
-  background-color: #f0e6dc;
+  background-color: #f9f9f9;
 }
 
 .label {
