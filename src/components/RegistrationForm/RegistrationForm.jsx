@@ -1,25 +1,32 @@
-import css from './RegisterForm.module.css';
+import css from './RegistrationForm.module.css';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { useId } from 'react';
+import { useDispatch } from 'react-redux';
 import * as Yup from 'yup';
+import { register } from '../../redux/auth/operations';
 
 const LoginSchema = Yup.object().shape({
   name: Yup.string().min(6, 'Too Short!').max(50, 'Too Long!').required('Required field'),
-  number: Yup.string().min(6, 'Too Short!').max(50, 'Too Long!').required('Required field'),
+  email: Yup.string().min(6, 'Too Short!').max(50, 'Too Long!').required('Required field'),
+  password: Yup.string().min(6, 'Too Short!').max(50, 'Too Long!').required('Required field'),
 });
 
-const LoginForm = () => {
+const RegistrationForm = () => {
   const nameId = useId();
   const emailId = useId();
   const passwordId = useId();
 
+  const dispatch = useDispatch();
+
+  const handleSubmit = (values, actions) => {
+    dispatch(register(values));
+    actions.resetForm();
+  };
+
   return (
     <Formik
-      initialValues={{ email: '', password: '' }}
-      onSubmit={(values, actions) => {
-        console.log(values);
-        actions.resetForm();
-      }}
+      initialValues={{ name: '', email: '', password: '' }}
+      onSubmit={handleSubmit}
       validationSchema={LoginSchema}
     >
       <Form className={css.form}>
@@ -27,15 +34,15 @@ const LoginForm = () => {
           <label className={css.label} htmlFor={nameId}>
             Username
           </label>
-          <Field type="text" name="username" id={nameId} />
-          <ErrorMessage className={css.error} name="username" component="p" />
+          <Field type="text" name="name" id={nameId} />
+          <ErrorMessage className={css.error} name="name" component="p" />
         </div>
 
         <div className={css.field}>
           <label className={css.label} htmlFor={emailId}>
             Email
           </label>
-          <Field type="text" name="email" id={emailId} />
+          <Field type="email" name="email" id={emailId} />
           <ErrorMessage className={css.error} name="email" component="p" />
         </div>
 
@@ -43,7 +50,7 @@ const LoginForm = () => {
           <label className={css.label} htmlFor={passwordId}>
             Password
           </label>
-          <Field type="text" name="password" id={passwordId} />
+          <Field type="password" name="password" id={passwordId} />
           <ErrorMessage className={css.error} name="password" component="p" />
         </div>
 
@@ -55,4 +62,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default RegistrationForm;

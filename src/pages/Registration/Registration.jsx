@@ -1,9 +1,9 @@
-import css from './RegisterPage.module.css';
+import css from './Registration.module.css';
 import AppBar from '../../components/AppBar/AppBar';
-import RegisterForm from '../../components/RegisterForm/RegisterForm';
+import RegistrationForm from '../../components/RegistrationForm/RegistrationForm';
 import { FaHeart } from 'react-icons/fa';
 
-const RegisterPage = () => {
+const Registration = () => {
   return (
     <>
       <AppBar />
@@ -23,10 +23,10 @@ const RegisterPage = () => {
           </p>
         </div>
       </div>
-      <RegisterForm />
+      <RegistrationForm />
       <div className={css.bgImage}></div>
     </>
   );
 };
 
-export default RegisterPage;
+export default Registration;

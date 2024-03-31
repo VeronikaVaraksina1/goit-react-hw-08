@@ -1,26 +1,14 @@
-import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import css from './UserMenu.module.css';
-import clsx from 'clsx';
+import { selectUser } from '../../redux/auth/selectors';
 
 const UserMenu = () => {
+  const user = useSelector(selectUser);
+  console.log(user);
   return (
     <div className={css.container}>
-      <NavLink
-        className={({ isActive }) => {
-          return clsx(css.link, isActive && css.isActive);
-        }}
-        to="/login"
-      >
-        Log In
-      </NavLink>
-      <NavLink
-        className={({ isActive }) => {
-          return clsx(css.link, isActive && css.isActive);
-        }}
-        to="/register"
-      >
-        Sign Up
-      </NavLink>
+      <p>Hello, {user}!</p>
+      <button className={css.button}>Log Out</button>
     </div>
   );
 };

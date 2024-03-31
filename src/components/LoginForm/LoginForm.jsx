@@ -1,26 +1,22 @@
 import css from './LoginForm.module.css';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { useId } from 'react';
-import * as Yup from 'yup';
-
-const LoginSchema = Yup.object().shape({
-  name: Yup.string().min(6, 'Too Short!').max(50, 'Too Long!').required('Required field'),
-  number: Yup.string().min(6, 'Too Short!').max(50, 'Too Long!').required('Required field'),
-});
+import { useDispatch } from 'react-redux';
+import { login } from '../../redux/auth/operations';
 
 const LoginForm = () => {
   const emailId = useId();
   const passwordId = useId();
 
+  const dispatch = useDispatch();
+
+  const handleSubmit = (values, actions) => {
+    dispatch(login(values));
+    actions.resetForm();
+  };
+
   return (
-    <Formik
-      initialValues={{ email: '', password: '' }}
-      onSubmit={(values, actions) => {
-        console.log(values);
-        actions.resetForm();
-      }}
-      validationSchema={LoginSchema}
-    >
+    <Formik initialValues={{ email: '', password: '' }} onSubmit={handleSubmit}>
       <Form className={css.form}>
         <div className={css.field}>
           <label className={css.label} htmlFor={emailId}>

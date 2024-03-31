@@ -32,6 +32,11 @@
   font-size: 18px;
 }
 
+.icon {
+  margin-right: 10px;
+  color: #c66a61;
+}
+
 .bgImage {
   background-image: url(../../img/background-home.jpg);
   background-color: #f4f5f5;
@@ -64,7 +69,7 @@
 
 .image {
   position: absolute;
-  right: 172px;
+  right: 182px;
   bottom: 162px;
 
   width: 468px;
@@ -75,16 +80,15 @@
 
 .description {
   position: absolute;
-  right: 40px;
-  bottom: 40px;
+  right: 52px;
+  bottom: 22px;
 
   width: 600px;
   padding: 10px;
-  border: 1px solid #ad865a;
   border-radius: 10px;
   margin: 0 auto;
 
-  background-color: #f4f5f5;
+  background-color: #f5f5f5eb;
   text-align: center;
   font-size: 18px;
   font-weight: 500;

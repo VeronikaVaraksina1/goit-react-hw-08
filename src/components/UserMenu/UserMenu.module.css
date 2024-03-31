@@ -1,23 +1,26 @@
 .container {
   display: flex;
-  gap: 24px;
-}
+  justify-content: center;
+  align-items: center;
+  gap: 36px;
 
-.link {
   font-size: 18px;
-  padding: 2px 16px;
-  border-radius: 15px;
-  color: #483723;
-  transition: border 250ms ease-in, background-color 250ms ease-in, color 250ms ease-in;
+  font-weight: 600;
 }
 
-.isActive {
-  color: #242424;
-  background-color: #cfb599;
+.button {
+  width: 100px;
+  padding: 4px 8px;
   border: 1px solid #ad865a;
+  border-radius: 15px;
+  margin: 0 auto;
+
+  background-color: #cfb599;
+  font-size: 16px;
+  transition: background-color 250ms ease-in;
 }
 
-.isActive:hover,
-.isActive:focus {
+.button:hover,
+.button:focus {
   background-color: #be9d79;
 }
