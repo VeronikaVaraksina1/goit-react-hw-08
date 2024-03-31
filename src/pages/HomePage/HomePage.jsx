@@ -1,5 +1,6 @@
 import AppBar from '../../components/AppBar/AppBar';
 import css from './HomePage.module.css';
+import homeImage from '../../img/img-home.jpg';
 
 const HomePage = () => {
   return (
@@ -9,12 +10,10 @@ const HomePage = () => {
       <div className={css.containerTitle}>
         <h1 className={css.title}>Welcome to Contact Kingdom!</h1>
       </div>
-
       <h2 className={css.subtitle}>
         Simplify your life and stay organized with our user-friendly online tool designed to
         streamline your contact management experience.
       </h2>
-
       <div className={css.containerDescription}>
         <h3>Advantages of Contact Kingdom:</h3>
         <ul className={css.list}>
@@ -51,7 +50,7 @@ const HomePage = () => {
           simplicity, organization, and peace of mind.
         </h3>
       </div>
-      <img className={css.image} src="../../../src/img/img-home.jpg" alt="home image" />
+      <img className={css.image} src={homeImage} alt="home image" />
     </div>
   );
 };
