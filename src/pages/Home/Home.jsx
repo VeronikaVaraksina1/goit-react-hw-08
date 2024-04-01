@@ -7,11 +7,11 @@ const Home = () => {
     <div>
       <div className={css.containerTitle}>
         <h1 className={css.title}>Welcome to Contact Kingdom!</h1>
+        <h2 className={css.subtitle}>
+          Simplify your life and stay organized with our user-friendly online tool designed to
+          streamline your contact management experience.
+        </h2>
       </div>
-      <h2 className={css.subtitle}>
-        Simplify your life and stay organized with our user-friendly online tool designed to
-        streamline your contact management experience.
-      </h2>
 
       <div className={css.container}>
         <div className={css.containerList}>
@@ -66,7 +66,7 @@ const Home = () => {
           </ul>
         </div>
 
-        <div>
+        <div className={css.containerDesc}>
           <img className={css.image} src={homeImage} alt="home image" />
           <h3 className={css.description}>
             Sign up now and start enjoying the benefits of efficient contact management. Say hello
