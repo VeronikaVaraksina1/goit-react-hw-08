@@ -1,13 +1,11 @@
-import AppBar from '../../components/AppBar/AppBar';
-import css from './HomePage.module.css';
+import css from './Home.module.css';
 import homeImage from '../../img/img-home.jpg';
 import { FaHeart } from 'react-icons/fa';
 
-const HomePage = () => {
+const Home = () => {
   return (
     <div>
       <div className={css.bgImage}></div>
-      <AppBar />
       <div className={css.containerTitle}>
         <h1 className={css.title}>Welcome to Contact Kingdom!</h1>
       </div>
@@ -76,4 +74,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default Home;

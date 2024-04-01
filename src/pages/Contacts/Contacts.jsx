@@ -1,4 +1,4 @@
-import css from './ContactsPage.module.css';
+import css from './Contacts.module.css';
 import ContactList from '../../components/ContactList/ContactList';
 import SearchBox from '../../components/SearchBox/SearchBox';
 import ContactForm from '../../components/ContactForm/ContactForm';
@@ -9,9 +9,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from '../../redux/contacts/operations';
 import { selectError, selectLoading } from '../../redux/contacts/selectors';
 import toast, { Toaster } from 'react-hot-toast';
-import AppBar from '../../components/AppBar/AppBar';
 
-const ContactsPage = () => {
+const Contacts = () => {
   const dispatch = useDispatch();
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
@@ -27,7 +26,6 @@ const ContactsPage = () => {
   return (
     <>
       <div className={css.bgImage}></div>
-      <AppBar />
       <ContactForm />
       <SearchBox />
       {loading && <Loader />}
@@ -38,4 +36,4 @@ const ContactsPage = () => {
   );
 };
 
-export default ContactsPage;
+export default Contacts;

@@ -1,25 +1,37 @@
 import css from './App.module.css';
-import HomePage from '../../pages/HomePage/HomePage';
-import ContactsPage from '../../pages/ContactsPage/ContactsPage';
-import LoginPage from '../../pages/LoginPage/LoginPage';
-import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage';
-import Registration from '../../pages/Registration/Registration';
-import { Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
 import Loader from '../Loader/Loader';
+import Layout from '../Layout/Layout';
+import { Suspense, lazy, useEffect } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { refreshUser } from '../../redux/auth/operations';
+
+const Home = lazy(() => import('../../pages/Home/Home'));
+const Contacts = lazy(() => import('../../pages/Contacts/Contacts'));
+const Registration = lazy(() => import('../../pages/Registration/Registration'));
+const Login = lazy(() => import('../../pages/Login/Login'));
+const NotFound = lazy(() => import('../../pages/NotFound/NotFound'));
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
   return (
     <div className={css.container}>
-      <Suspense fullback={<Loader />}>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/contacts" element={<ContactsPage />} />
-          <Route path="/register" element={<Registration />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </Suspense>
+      <Layout>
+        <Suspense fullback={<Loader />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/contacts" element={<Contacts />} />
+            <Route path="/register" element={<Registration />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
+      </Layout>
     </div>
   );
 };

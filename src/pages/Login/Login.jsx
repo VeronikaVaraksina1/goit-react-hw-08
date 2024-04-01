@@ -1,13 +1,11 @@
-import css from './LoginPage.module.css';
-import AppBar from '../../components/AppBar/AppBar';
+import css from './Login.module.css';
 import LoginForm from '../../components/LoginForm/LoginForm';
 import { FaHeart } from 'react-icons/fa';
 
-const LoginPage = () => {
+const Login = () => {
   return (
     <>
       <div className={css.bgImage}></div>
-      <AppBar />
       <div className={css.text}>
         <p>
           <span className={css.icon}>
@@ -21,4 +19,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default Login;

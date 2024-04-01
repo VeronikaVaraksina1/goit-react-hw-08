@@ -1,12 +1,10 @@
 import css from './Registration.module.css';
-import AppBar from '../../components/AppBar/AppBar';
 import RegistrationForm from '../../components/RegistrationForm/RegistrationForm';
 import { FaHeart } from 'react-icons/fa';
 
 const Registration = () => {
   return (
     <>
-      <AppBar />
       <div className={css.container}>
         <h2>Save time and simplify your life with us! </h2>
         <div className={css.text}>
