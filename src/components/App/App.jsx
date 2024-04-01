@@ -3,8 +3,11 @@ import Loader from '../Loader/Loader';
 import Layout from '../Layout/Layout';
 import { Suspense, lazy, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { refreshUser } from '../../redux/auth/operations';
+import { selectIsRefreshing } from '../../redux/auth/selectors';
+import { PrivateRoute } from '../PrivateRoute/PrivateRoute';
+import { RestrictedRoute } from '../RestrictedRoute/RestrictedRoute';
 
 const Home = lazy(() => import('../../pages/Home/Home'));
 const Contacts = lazy(() => import('../../pages/Contacts/Contacts'));
@@ -14,20 +17,32 @@ const NotFound = lazy(() => import('../../pages/NotFound/NotFound'));
 
 const App = () => {
   const dispatch = useDispatch();
+  const isRefreshing = useSelector(selectIsRefreshing);
 
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  return (
+  return isRefreshing ? (
+    <Loader />
+  ) : (
     <div className={css.container}>
       <Layout>
         <Suspense fullback={<Loader />}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/contacts" element={<Contacts />} />
-            <Route path="/register" element={<Registration />} />
-            <Route path="/login" element={<Login />} />
+            <Route
+              path="/contacts"
+              element={<PrivateRoute component={<Contacts />} redirectTo="/login" />}
+            />
+            <Route
+              path="/register"
+              element={<RestrictedRoute component={<Registration />} redirectTo="/contacts" />}
+            />
+            <Route
+              path="/login"
+              element={<RestrictedRoute component={<Login />} redirectTo="/contacts" />}
+            />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

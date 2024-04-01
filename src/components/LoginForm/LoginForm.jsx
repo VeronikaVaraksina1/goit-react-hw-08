@@ -22,7 +22,7 @@ const LoginForm = () => {
           <label className={css.label} htmlFor={emailId}>
             Email
           </label>
-          <Field type="text" name="email" id={emailId} />
+          <Field type="email" name="email" id={emailId} />
           <ErrorMessage className={css.error} name="email" component="p" />
         </div>
 
@@ -30,7 +30,7 @@ const LoginForm = () => {
           <label className={css.label} htmlFor={passwordId}>
             Password
           </label>
-          <Field type="text" name="password" id={passwordId} />
+          <Field type="password" name="password" id={passwordId} />
           <ErrorMessage className={css.error} name="password" component="p" />
         </div>
 

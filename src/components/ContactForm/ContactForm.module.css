@@ -1,12 +1,13 @@
 .wrapper {
-  padding-top: 30px;
+  padding-top: 40px;
 }
 
 .form {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  max-width: 460px;
+
+  width: 280px;
   padding: 20px;
   border: 1px solid #ad865a;
   border-radius: 8px;
@@ -55,7 +56,16 @@
   transition: background-color 250ms ease-in;
 }
 
-.button:hover,
-.button:focus {
-  background-color: #be9d79;
+@media screen and (min-width: 768px) {
+  .form {
+    gap: 16px;
+    width: 460px;
+  }
+}
+
+@media screen and (min-width: 1240px) {
+  .button:hover,
+  .button:focus {
+    background-color: #be9d79;
+  }
 }

@@ -1,5 +1,5 @@
 .container {
-  padding: 35px 20px;
+  padding: 24px 0;
   text-align: center;
 }
 
@@ -10,9 +10,15 @@
 
 .input {
   display: block;
-  width: 450px;
+  width: 280px;
   padding: 10px 10px;
   border: 1px solid #ad865a;
   border-radius: 8px;
   margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .input {
+    width: 460px;
+  }
 }

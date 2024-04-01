@@ -2,11 +2,9 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  max-width: 460px;
-  padding: 20px;
 
+  width: 280px;
   border-radius: 8px;
-  margin: 0 auto;
 }
 
 .label {
@@ -50,7 +48,15 @@
   transition: background-color 250ms ease-in;
 }
 
-.button:hover,
-.button:focus {
-  background-color: #be9d79;
+@media screen and (min-width: 768px) {
+  .form {
+    width: 400px;
+  }
+}
+
+@media screen and (min-width: 1240px) {
+  .button:hover,
+  .button:focus {
+    background-color: #be9d79;
+  }
 }

@@ -5,16 +5,17 @@ import { FaHeart } from 'react-icons/fa';
 const Login = () => {
   return (
     <>
-      <div className={css.bgImage}></div>
-      <div className={css.text}>
-        <p>
+      <div className={css.container}>
+        <LoginForm />
+        <p className={css.text}>
           <span className={css.icon}>
             <FaHeart />
           </span>
           We&#39;re glad to see you again! Please sign in to access your account.
         </p>
       </div>
-      <LoginForm />
+
+      <div className={css.bgImage}></div>
     </>
   );
 };

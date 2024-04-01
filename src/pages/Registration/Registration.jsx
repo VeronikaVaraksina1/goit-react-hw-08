@@ -5,9 +5,10 @@ import { FaHeart } from 'react-icons/fa';
 const Registration = () => {
   return (
     <>
-      <div className={css.container}>
+      <div className={css.wrapper}>
         <h2>Save time and simplify your life with us! </h2>
-        <div className={css.text}>
+        <RegistrationForm />
+        <div className={css.container}>
           <p>
             <span className={css.icon}>
               <FaHeart />
@@ -21,7 +22,7 @@ const Registration = () => {
           </p>
         </div>
       </div>
-      <RegistrationForm />
+
       <div className={css.bgImage}></div>
     </>
   );
