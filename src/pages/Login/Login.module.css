@@ -17,6 +17,8 @@
 }
 
 .icon {
+  position: relative;
+  top: 1px;
   margin-right: 10px;
   color: #c66a61;
 }
