@@ -1,21 +1,17 @@
 import css from './Contact.module.css';
-import { deleteContact } from '../../redux/contacts/operations';
-import { useDispatch } from 'react-redux';
+import DeleteModal from '../DeleteModal/DeleteModal';
 import { ImUser, ImPhone, ImUserMinus } from 'react-icons/im';
-import toast from 'react-hot-toast';
+import { useState } from 'react';
 
 const Contact = ({ data: { id, name, number } }) => {
-  const dispatch = useDispatch();
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  const handleDelete = () => {
-    dispatch(deleteContact(id))
-      .unwrap()
-      .then(() => {
-        toast.success('Contact deleted');
-      })
-      .catch(() => {
-        toast.error('The contact has not been deleted. Reload the page');
-      });
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
   };
 
   return (
@@ -30,9 +26,11 @@ const Contact = ({ data: { id, name, number } }) => {
           {number}
         </p>
       </div>
-      <button className={css.button} onClick={handleDelete}>
+      <button className={css.button} type="button" onClick={openModal}>
         <ImUserMinus />
       </button>
+
+      <DeleteModal value={id} modalIsOpen={modalIsOpen} onCloseModal={closeModal} />
     </div>
   );
 };

@@ -31,6 +31,7 @@ const Contacts = () => {
       {loading && <Loader />}
       {error && <ErrorMessage>Something went wrong! Please reload the page 🚩</ErrorMessage>}
       <ContactList />
+
       <Toaster />
     </>
   );
