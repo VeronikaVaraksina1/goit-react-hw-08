@@ -19,9 +19,9 @@ const App = () => {
   const dispatch = useDispatch();
   const isRefreshing = useSelector(selectIsRefreshing);
 
-  useEffect(() => {
-    dispatch(refreshUser());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(refreshUser());
+  // }, [dispatch]);
 
   return isRefreshing ? (
     <Loader />
