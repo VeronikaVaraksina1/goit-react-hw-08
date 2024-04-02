@@ -1,8 +1,9 @@
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 36px;
+  gap: 16px;
 
   font-size: 18px;
   font-weight: 600;
@@ -20,7 +21,16 @@
   transition: background-color 250ms ease-in;
 }
 
-.button:hover,
-.button:focus {
-  background-color: #be9d79;
+@media screen and (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    gap: 36px;
+  }
+}
+
+@media screen and (min-width: 1240px) {
+  .button:hover,
+  .button:focus {
+    background-color: #be9d79;
+  }
 }
