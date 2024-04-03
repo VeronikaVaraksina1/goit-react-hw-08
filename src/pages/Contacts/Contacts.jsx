@@ -18,9 +18,7 @@ const Contacts = () => {
   useEffect(() => {
     dispatch(fetchContacts())
       .unwrap()
-      .catch(() => {
-        toast.error('Something went wrong! Reload the page');
-      });
+      .catch(() => toast.error('Something went wrong! Reload the page'));
   }, [dispatch]);
 
   return (

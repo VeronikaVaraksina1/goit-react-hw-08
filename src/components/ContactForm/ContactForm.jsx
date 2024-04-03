@@ -20,12 +20,8 @@ const ContactForm = () => {
   const handleSubmit = newContact => {
     dispatch(addContact(newContact))
       .unwrap()
-      .then(() => {
-        toast.success('Contact added');
-      })
-      .catch(() => {
-        toast.error('The contact has not been added. Reload the page');
-      });
+      .then(() => toast.success('Contact added'))
+      .catch(() => toast.error('The contact has not been added. Reload the page'));
   };
 
   return (

@@ -15,7 +15,8 @@ const DeleteModal = ({ value, modalIsOpen, onCloseModal }) => {
       left: '50%',
       right: 'auto',
       bottom: 'auto',
-      padding: '15px',
+      padding: '10px',
+      borderRadius: '10px',
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
       backgroundColor: '#fff',
@@ -30,12 +31,8 @@ const DeleteModal = ({ value, modalIsOpen, onCloseModal }) => {
   const handleDelete = () => {
     dispatch(deleteContact(value))
       .unwrap()
-      .then(() => {
-        toast.success('Contact deleted');
-      })
-      .catch(() => {
-        toast.error('The contact has not been deleted. Reload the page');
-      });
+      .then(() => toast.success('Contact deleted'))
+      .catch(() => toast.error('The contact has not been deleted. Reload the page'));
   };
 
   return (
