@@ -59,7 +59,7 @@ const RegistrationForm = () => {
           </div>
 
           <button className={css.button} type="submit">
-            Done
+            Sign up
           </button>
         </Form>
       </Formik>
