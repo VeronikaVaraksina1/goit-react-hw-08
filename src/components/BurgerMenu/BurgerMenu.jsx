@@ -20,7 +20,7 @@ const BurgerMenu = ({ toggle, onClick }) => {
             </button>
           </div>
           <div className={css.menuContainer}>
-            <Navigation />
+            <Navigation onClick={onClick} />
             {isLoggedIn ? <UserMenu /> : <AuthNav />}
           </div>
           <p className={css.description}>

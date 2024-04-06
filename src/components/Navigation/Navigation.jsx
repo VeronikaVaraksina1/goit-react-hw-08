@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectIsLoggedIn } from '../../redux/auth/selectors';
 
-const Navigation = () => {
+const Navigation = ({onClick}) => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
@@ -14,7 +14,7 @@ const Navigation = () => {
           return clsx(css.link, isActive && css.isActive);
         }}
         to="/"
-      >
+      onClick={onClick}>
         Home
       </NavLink>
       {isLoggedIn && (
@@ -23,7 +23,7 @@ const Navigation = () => {
             return clsx(css.link, isActive && css.isActive);
           }}
           to="/contacts"
-        >
+          onClick={onClick}>
           Contacts
         </NavLink>
       )}
