@@ -21,7 +21,7 @@ const BurgerMenu = ({ toggle, onClick }) => {
           </div>
           <div className={css.menuContainer}>
             <Navigation onClick={onClick} />
-            {isLoggedIn ? <UserMenu /> : <AuthNav />}
+            {isLoggedIn ? <UserMenu onClick={onClick} /> : <AuthNav onClick={onClick} />}
           </div>
           <p className={css.description}>
             &#171;Save your world of contacts by opening the possibilities of Contact Kingdom&#187;

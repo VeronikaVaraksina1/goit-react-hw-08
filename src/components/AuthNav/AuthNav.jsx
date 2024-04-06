@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import css from './AuthNav.module.css';
 import clsx from 'clsx';
 
-const AuthNav = () => {
+const AuthNav = ({onClick}) => {
   return (
     <div className={css.container}>
       <NavLink
@@ -10,7 +10,7 @@ const AuthNav = () => {
           return clsx(css.link, isActive && css.isActive);
         }}
         to="/login"
-      >
+        onClick={onClick}>
         Log In
       </NavLink>
       <NavLink
@@ -18,7 +18,7 @@ const AuthNav = () => {
           return clsx(css.link, isActive && css.isActive);
         }}
         to="/register"
-      >
+        onClick={onClick}>
         Sign Up
       </NavLink>
     </div>
