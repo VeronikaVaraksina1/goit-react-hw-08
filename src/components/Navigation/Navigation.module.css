@@ -17,6 +17,12 @@
   border: 1px solid #ad865a;
 }
 
+@media screen and (max-width: 767px) {
+  .homeLink {
+    border: 1px solid #483723;
+  }
+}
+
 @media screen and (min-width: 1240px) {
   .isActive:hover,
   .isActive:focus {

@@ -15,6 +15,7 @@
 }
 
 .field {
+  position: relative;
   display: flex;
   flex-direction: column;
 }
@@ -27,8 +28,12 @@
 }
 
 .error {
-  width: 112px;
-  padding: 6px;
+  position: absolute;
+  top: 33px;
+  right: 10px;
+  font-size: 12px;
+
+  padding: 2px 6px;
   border-radius: 15px;
   margin-left: 8px;
 

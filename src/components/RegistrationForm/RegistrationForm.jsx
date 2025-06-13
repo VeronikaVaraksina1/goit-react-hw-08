@@ -6,8 +6,8 @@ import * as Yup from 'yup';
 import { register } from '../../redux/auth/operations';
 import toast, { Toaster } from 'react-hot-toast';
 
-const LoginSchema = Yup.object().shape({
-  name: Yup.string().min(6, 'Too Short!').max(50, 'Too Long!').required('Required field'),
+const RegistrationSchema = Yup.object().shape({
+  name: Yup.string().min(1, 'Too Short!').max(50, 'Too Long!').required('Required field'),
   email: Yup.string().min(6, 'Too Short!').max(50, 'Too Long!').required('Required field'),
   password: Yup.string().min(6, 'Too Short!').max(50, 'Too Long!').required('Required field'),
 });
@@ -31,7 +31,7 @@ const RegistrationForm = () => {
       <Formik
         initialValues={{ name: '', email: '', password: '' }}
         onSubmit={handleSubmit}
-        validationSchema={LoginSchema}
+        validationSchema={RegistrationSchema}
       >
         <Form className={css.form}>
           <div className={css.field}>

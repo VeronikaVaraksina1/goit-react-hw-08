@@ -7,7 +7,7 @@ import { changeFilter } from '../../redux/filters/slice';
 const SearchBox = () => {
   const elementId = useId();
   const dispatch = useDispatch();
-  const value = useSelector(selectNameFilter);
+  // const value = useSelector(selectNameFilter);
 
   const handleChange = e => {
     dispatch(changeFilter(e.target.value));
@@ -22,7 +22,7 @@ const SearchBox = () => {
         className={css.input}
         type="text"
         id={elementId}
-        value={value}
+        // value={value}
         onChange={handleChange}
       />
     </div>
