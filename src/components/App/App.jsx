@@ -1,5 +1,6 @@
 import css from './App.module.css';
 import Loader from '../Loader/Loader';
+import FullscreenLoader from '../FullscreenLoader/FullscreenLoader';
 import Layout from '../Layout/Layout';
 import { Suspense, lazy, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
@@ -24,7 +25,7 @@ const App = () => {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <Loader />
+    <FullscreenLoader />
   ) : (
     <div className={css.container}>
       <Layout>

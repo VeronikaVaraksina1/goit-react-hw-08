@@ -1,7 +1,7 @@
 .containerTitle {
   max-width: 1240px;
-  padding-bottom: 30px;
   margin: 0 auto;
+  margin-bottom: 30px;
 
   text-align: center;
 }
@@ -95,10 +95,6 @@
 }
 
 @media screen and (min-width: 768px) {
-  .containerTitle {
-    padding: 20px 0 30px;
-  }
-
   .title {
     font-size: 28px;
   }
